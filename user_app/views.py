@@ -42,22 +42,27 @@ class RegisterView(View):
     
 class LoginView(View):
 
-    def get(self,request):
+    def get(self, request):
+
+        return render(request, "login.html")
+
+    def post(self, request):
 
         username = request.POST.get('username')
 
-        password =request.POST.get('password')
+        password = request.POST.get('password')
 
-        user =  authenticate(request,username = username,password = password)
+        user = authenticate(request, username=username, password=password)
 
         if user:
 
-            login(request,user)
+            login(request, user)
 
-            return render(request,"signup.html")
+            return render(request, "signup.html") 
         
         return render(request,"login.html")
-    
+
+          
     
 
 

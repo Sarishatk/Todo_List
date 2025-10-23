@@ -42,7 +42,9 @@ class LoginView(View):
 
     def get(self,request):
 
-        
+        username = request.POST.get('username')
+
+        password =request.POST.get('password')
 
         return render(request,"login.html")
 

@@ -56,7 +56,7 @@ class LoginView(View):
 
             return render(request,"signup.html")
         
-        return render(request,'login.html')
+        return render(request,"login.html")
     
     
 

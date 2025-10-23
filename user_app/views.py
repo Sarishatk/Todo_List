@@ -33,6 +33,12 @@ class RegisterView(View):
         User.objects.create_user(username =username,first_name = first_name, last_name = last_name,password=password,email=email)
 
         return render(request,"signup.html",{'form':form})
+    
+
+    
+    
+
+
 
 
 

@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views.generic import View
 from user_app.forms import UserRegistrationForm
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login,logout
+
 
 # Create your views here.
 
@@ -46,7 +48,17 @@ class LoginView(View):
 
         password =request.POST.get('password')
 
-        return render(request,"login.html")
+        user =  authenticate(request,username = username,password = password)
+
+        if user:
+
+            login(request,user)
+
+            return render(request,"signup.html")
+        
+        return render(request,'login.html')
+    
+    
 
 
 

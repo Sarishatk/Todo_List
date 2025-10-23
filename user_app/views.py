@@ -38,6 +38,8 @@ class RegisterView(View):
     
 
     
+class LoginView(View):
+
 
 
     

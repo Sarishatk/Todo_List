@@ -11,6 +11,18 @@ class RegisterView(View):
         form = UserRegistrationForm()
 
         return render(request,"signup.html",{'form':form})
+    
+    def post(self,request):
+
+        print(request.POST)
+
+        
+
+        form = UserRegistrationForm()
+        return render(request,"signup.html",{'form':form})
+
+
+
 
 
 

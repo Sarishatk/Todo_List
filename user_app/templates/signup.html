@@ -1,16 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker - Signup</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .signup-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 750px;
+      max-width: 95%;
+    }
+
+    .signup-left {
+      background: linear-gradient(135deg, #74EBD5, #9FACE6);
+      flex: 1;
+      color: #fff;
+      text-align: center;
+      padding: 60px 30px;
+    }
+
+    .signup-left h2 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .signup-left p {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+
+    .signup-left img {
+      width: 180px;
+      margin-top: 20px;
+    }
+
+    .signup-right {
+      flex: 1;
+      padding: 50px 40px;
+    }
+
+    .signup-right h3 {
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    form label {
+      display: block;
+      font-size: 14px;
+      color: #555;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    form input {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: all 0.3s;
+    }
+
+    form input:focus {
+      border-color: #74EBD5;
+      outline: none;
+      box-shadow: 0 0 5px rgba(116, 235, 213, 0.5);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #74EBD5, #9FACE6);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.02);
+      box-shadow: 0 5px 10px rgba(116, 235, 213, 0.4);
+    }
+
+    .login-link {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .login-link a {
+      color: #74EBD5;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+
+    @media(max-width: 700px) {
+      .signup-wrapper {
+        flex-direction: column;
+        width: 90%;
+      }
+
+      .signup-left {
+        padding: 40px 20px;
+      }
+
+      .signup-right {
+        padding: 30px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Signup form</h1>
-    <form action="" method="post">
+  <div class="signup-wrapper">
+    <div class="signup-left">
+      <h2>Welcome to Expense Tracker</h2>
+      <p>Manage your expenses easily and stay financially smart 💰</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="Expense Icon">
+    </div>
+
+    <div class="signup-right">
+      <h3>Create Your Account</h3>
+      <form method="post" action="">
         {% csrf_token %}
-        {{form}}
-        <button>Signup</button>
-    </form>
+        {{ form.as_p }}
+        <button type="submit" class="btn">Sign Up</button>
+      </form>
+      <div class="login-link">
+        Already have an account? <a href="/login/">Login</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

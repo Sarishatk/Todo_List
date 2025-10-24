@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views.generic import View
 from user_app.forms import UserRegistrationForm
 from django.contrib.auth.models import User
@@ -64,6 +64,16 @@ class LoginView(View):
 
           
     
+    
+class logOut(View):
+
+    def get(self,request):
+
+        logout(request)
+
+        return redirect("login")
+
+
 
 
 

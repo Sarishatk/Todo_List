@@ -26,4 +26,5 @@ urlpatterns = [
     path('logout/',logOut.as_view(),name='add_task'),
     path("",BaseView.as_view()),
     path('add_task/',addTodoList.as_view()),
+    path('alllist/',todolistview.as_view()),
 ]

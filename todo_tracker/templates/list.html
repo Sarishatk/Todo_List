@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+   <form action="" method="post">
+    {% csrf_token %}
+    <table>
+        <th>category</th>
+        <th>titile</th>
+        <th>date</th>
+        <th> price</th>
+        <th>note</th>
+     {% for ls in alllist %}
+        <tr>
+            <td>{{ls.category}}</td>
+            <td>{{ls.titile}}</td>
+            <td>{{ls.date}}</td>
+            <td>{{ls.note}}</td>
+        </tr>
+    </table>
+    {% endfor %}
+   </form>
 </body>
 </html>

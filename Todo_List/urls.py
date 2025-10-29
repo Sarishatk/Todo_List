@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from user_app.views import RegisterView,LoginView,logOut,BaseView
+from todo_tracker.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/',RegisterView.as_view(),name="signup"),
     path('login/',LoginView.as_view(),name = "login"),
     path('logout/',logOut.as_view(),name='add_task'),
-    path("",BaseView.as_view())
+    path("",BaseView.as_view()),
+    path('add_task/',addTodoList.as_view()),
 ]

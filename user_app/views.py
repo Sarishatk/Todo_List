@@ -72,6 +72,13 @@ class logOut(View):
         logout(request)
 
         return redirect("signup")
+    
+
+class BaseView(View):
+
+    def get(self,request):
+
+        return render(request,"home.html")
 
 
 

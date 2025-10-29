@@ -31,7 +31,7 @@ class addTodoList(View):
 
             todo_list.save()
 
-            return render(request,"add_task.html",{'form':form})
+            return render(request, "add_task.html", {'form': form})
         
 
 class todolistview(View):

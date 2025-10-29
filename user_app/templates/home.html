@@ -104,13 +104,13 @@
                 <th>Note</th>
                 <th>Delete</th>
             </tr>
-            {% for todo in todos %}
+            {% for ls in alllist %}
                 <tr>
-                    <td>{{ todo.title }}</td>
-                    <td>{{ todo.category }}</td>
-                    <td>{{ todo.price }}</td>
-                    <td>{{ todo.date }}</td>
-                    <td>{{ todo.note }}</td>
+                    <td>{{ ls.title }}</td>
+                    <td>{{ ls.category }}</td>
+                    <td>{{ ls.price }}</td>
+                    <td>{{ ls.date }}</td>
+                    <td>{{ ls.note }}</td>
                     <td><a href="{% url 'delete_task' todo.id %}">❌</a></td>
                 </tr>
             {% empty %}

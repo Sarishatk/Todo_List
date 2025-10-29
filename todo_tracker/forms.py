@@ -5,7 +5,7 @@ class Todoform(forms.ModelForm):
 
     class Meta:
 
-        model = Todo_track()
+        model = Todo_track
 
         fields = ['category','titile','date','price','note']
         

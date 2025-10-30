@@ -111,7 +111,7 @@
                     <td>{{ ls.price }}</td>
                     <td>{{ ls.date }}</td>
                     <td>{{ ls.note }}</td>
-                    <td><a >❌</a></td>
+                    <td><a  href="{% url 'delete' ls.id %}">❌</a></td>
                 </tr>
             {% empty %}
                 <tr><td colspan="6">No entries yet.</td></tr>

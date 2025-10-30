@@ -24,7 +24,8 @@ urlpatterns = [
     path('signup/',RegisterView.as_view(),name="signup"),
     path('login/',LoginView.as_view(),name = "login"),
     path('logout/',logOut.as_view()),
-    path("",BaseView.as_view()),
+    path("",BaseView.as_view(),name='home'),
     path('add_task/',addTodoList.as_view(),name='add_task'),
     path('alllist/',todolistview.as_view()),
+    path('delete/<int:pk>',DeleteList.as_view(),name='delete')
 ]

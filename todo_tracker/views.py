@@ -4,6 +4,8 @@ from django.shortcuts import render,redirect
 from django.views.generic import View
 from todo_tracker.forms import Todoform
 from todo_tracker.models import Todo_track
+from django.shortcuts import get_object_or_404
+
 
 
 
@@ -44,3 +46,14 @@ class todolistview(View):
 
 
 
+class DeleteList(View):
+
+    def get(self, request,**kwargs):
+
+        id = kwargs.get('pk')
+
+        todo_list = get_object_or_404(Todo_track,id = id,user = request.user)
+
+        todo_list.delete()
+
+        return redirect("home")

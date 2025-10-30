@@ -5,21 +5,24 @@ from django.contrib.auth.models import User
 
 class Todo_track(models.Model):
 
-    catergory_choice = [
+    category_choice = [
+
         ('food','Food'),
-        ('rent','rent'),
-        ('shopping','shopping'),
-        ('vehicle','vechicle')
+
+        ('rent','Rent'),
+
+        ('shopping','Shopping'),
+
+        ('vehicle','Vehicle')
     ]
+    category = models.CharField(max_length=20, choices=category_choice)
 
-    category = models.CharField(max_length=20,choices=catergory_choice)
-
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     title = models.CharField(max_length=20)
 
     date = models.DateField()
 
-    price = models.DecimalField(max_digits=10,decimal_places=2)
-
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    
     note = models.CharField(max_length=120)

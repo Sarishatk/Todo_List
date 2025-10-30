@@ -3,6 +3,7 @@ from django.views.generic import View
 from user_app.forms import UserRegistrationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
+from todo_tracker.models import Todo_track
 
 
 # Create your views here.
@@ -78,7 +79,9 @@ class BaseView(View):
 
     def get(self,request):
 
-        return render(request,"home.html")
+        alllist = Todo_track.objects.filter(user = request.user)
+
+        return render(request,"home.html",{'alllist':alllist})
     
 
 

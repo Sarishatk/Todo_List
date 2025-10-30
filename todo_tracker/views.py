@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 # Create your views here.
 from django.views.generic import View
@@ -31,7 +31,7 @@ class addTodoList(View):
 
             todo_list.save()
 
-            return render(request, "add_task.html", {'form': form})
+            return redirect('add_task')
         
 
 class todolistview(View):

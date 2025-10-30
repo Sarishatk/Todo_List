@@ -10,15 +10,16 @@
     {% csrf_token %}
     <table border="1">
         <th>category</th>
-        <th>titile</th>
+        <th>title</th>
         <th>date</th>
         <th> price</th>
         <th>note</th>
      {% for ls in alllist %}
         <tr>
-            <td>{{ls.category}}</td>
-            <td>{{ls.titile}}</td>
+            <td >{{ls.category}}</td>
+            <td>{{ls.title}}</td>
             <td>{{ls.date}}</td>
+            <td>{{ls.price}}</td>
             <td>{{ls.note}}</td>
         </tr>
     </table>

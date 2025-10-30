@@ -16,7 +16,7 @@ class Todo_track(models.Model):
 
     user = models.ForeignKey(User,on_delete=models.CASCADE)
 
-    titile = models.CharField(max_length=20)
+    title = models.CharField(max_length=20)
 
     date = models.DateField()
 

@@ -33,7 +33,7 @@ class addTodoList(View):
 
             todo_list.save()
 
-            return redirect('add_task')
+            return redirect('home')
         
 
 class todolistview(View):

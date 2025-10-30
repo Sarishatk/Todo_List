@@ -23,8 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/',RegisterView.as_view(),name="signup"),
     path('login/',LoginView.as_view(),name = "login"),
-    path('logout/',logOut.as_view(),name='add_task'),
+    path('logout/',logOut.as_view()),
     path("",BaseView.as_view()),
-    path('add_task/',addTodoList.as_view()),
+    path('add_task/',addTodoList.as_view(),name='add_task'),
     path('alllist/',todolistview.as_view()),
 ]

@@ -1,10 +1,11 @@
 from django.shortcuts import render,redirect
 
 # Create your views here.
-from django.views.generic import View
+from django.views.generic import View,UpdateView
 from todo_tracker.forms import Todoform
 from todo_tracker.models import Todo_track
 from django.shortcuts import get_object_or_404
+from django.urls import reverse_lazy
 
 
 
@@ -57,3 +58,14 @@ class DeleteList(View):
         todo_list.delete()
 
         return redirect("home")
+    
+
+class todoUpdate(UpdateView):
+
+    model = Todo_track
+
+    form_class = Todoform
+
+    template_name = "update.html"
+
+    success_url = reverse_lazy("home")

@@ -69,3 +69,7 @@ class todoUpdate(UpdateView):
     template_name = "update.html"
 
     success_url = reverse_lazy("home")
+
+    def get_queryset(self):
+
+        return Todo_track.objects.filter(user = self.request.user)

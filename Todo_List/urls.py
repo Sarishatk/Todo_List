@@ -27,5 +27,6 @@ urlpatterns = [
     path("",BaseView.as_view(),name='home'),
     path('add_task/',addTodoList.as_view(),name='add_task'),
     path('alllist/',todolistview.as_view()),
-    path('delete/<int:pk>',DeleteList.as_view(),name='delete')
+    path('delete/<int:pk>',DeleteList.as_view(),name='delete'),
+    path('update/<int:pk>/', todoUpdate.as_view(), name='update'),
 ]
